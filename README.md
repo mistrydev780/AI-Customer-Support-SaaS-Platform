@@ -23,13 +23,8 @@ This platform helps businesses create and manage AI-powered customer support cha
 
 ## 🔗 Frontend
 
-https://your-frontend-url.vercel.app
+https://ai-customer-support-saa-s-platform.vercel.app/
 
----
-
-## ⚙️ Backend API
-
-https://your-backend-url.onrender.com
 
 ---
 
