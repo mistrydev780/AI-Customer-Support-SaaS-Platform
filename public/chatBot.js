@@ -1,6 +1,6 @@
 (function () {
 
-    const api_Url = "http://localhost:3000/api/chat"
+    const api_Url = "https://ai-customer-support-saa-s-platform.vercel.app/api/chat"
 
     const scriptTag = document.currentScript;
 
