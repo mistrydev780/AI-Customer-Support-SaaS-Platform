@@ -174,10 +174,10 @@
             })
             const data = await response.json()
             messagesArea.removeChild(typing)
-            addMessage(data || "Something Went Wrong......", "ai")
+          addMessage(data.message || "Something Went Wrong......", "ai")
         } catch (err) {
             messagesArea.removeChild(typing)
-            addMessage("Something Went Wrong......", "ai")
+            addMessage(data.message || "Something Went Wrong......", "ai")
         }
     }
     }) ();

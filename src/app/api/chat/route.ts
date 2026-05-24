@@ -84,11 +84,17 @@ const ai = new GoogleGenAI({apiKey:process.env.GEMINI_API_KEY!});
   });
   console.log(res.text);
 
-const response = NextResponse.json(res.text, { status: 200 });
-response.headers.set("Access-Control-Allow-Origin", "*");
-response.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
-response.headers.set("Access-Control-Allow-Headers", "Content-Type");
-return response;
+const response = NextResponse.json(
+  { message: res.text },
+  {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  }
+);
 
 }
     catch (error) {
@@ -102,10 +108,13 @@ return response;
 }
 
 
-export const OPTIONS =async () => {
-    return NextResponse.json(null, { status: 201, headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
-    } });
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
 }
